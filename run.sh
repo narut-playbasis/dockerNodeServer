@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf src
 git clone -b feature/NodeServerDockerTest https://github.com/playbasis/api.git ./src
 if ! type "docker-compose" > /dev/null; then
   # install docker-compose here
@@ -8,7 +9,6 @@ if ! type "docker-compose" > /dev/null; then
   docker-compose --version
 fi
 
-rm -rf src
 docker pull node
 docker pull redis
 docker-compose build
