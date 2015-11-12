@@ -1,11 +1,18 @@
 nodetest:
     build : .
     ports :
-       - "8080:8080"
        - "3000:3000"
     links:
        - redis
-
+    environment:
+       - REDIS_SERVER_ADDRESS=redis
+       - REDIS_CLIENT_ADDRESS=redis
+       - NON_SSL_MODE=1
+       - MONGO_HOST_ADDR=192.168.10.1
+       - MONGO_HOST_PORT=27017
+       - MONGO_HOST_USERNAME=
+       - MONGO_HOST_PASSWORD=
+       - MONGO_HOST_AUTH=
 redis:
     image: redis
 

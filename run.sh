@@ -7,6 +7,9 @@ if ! type "docker-compose" > /dev/null; then
   docker-compose --version
 fi
 
-docker pull narut/nodeserver
+rm -rf src
+git clone -b feature/NodeServerDockerTest https://github.com/playbasis/api.git ./src
+docker pull node
 docker pull redis
+docker-compose build
 docker-compose up
