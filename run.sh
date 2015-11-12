@@ -1,4 +1,5 @@
 #!/bin/bash
+git clone -b feature/NodeServerDockerTest https://github.com/playbasis/api.git ./src
 if ! type "docker-compose" > /dev/null; then
   # install docker-compose here
   sudo wget --no-check-certificate https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m`
